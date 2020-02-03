@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class FCFS {
 	public static void main(String[] args)
 	{
+// test
 		Scanner sc = new Scanner(System.in);
 		int size = sc.nextInt();
 		String[] procname = new String[size];
