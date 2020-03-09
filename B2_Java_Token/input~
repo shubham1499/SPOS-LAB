@@ -1,3 +1,12 @@
-public int
-  int w=1;
- }
+import java.util.*;
+public static void main(String args){
+  int x=2;
+  String str = "My name is pict";
+  while(5>1){
+    t--;
+  }
+  if(x==2){
+    System.out.println("True");
+  }
+}
+

@@ -1,5 +1,4 @@
 %{
-
 FILE* yyin;
 %}
 DIGIT [0-9]
@@ -19,11 +18,14 @@ LOGICAL_OP "&&"|"||"|"!"|"!="
 REL_OP "<"|">"|"<="|">="|"=="
 UNARY_OP "++"|"--"
 ACCESS_SP "public"|"private"|"protected"|""
-FUNCTION {ACCESS_SP}" "{DATATYPE}" "{IDENTIFIER}" ("({DATATYPE}" "{IDENTIFIER})")"
-
+FUNCTION {ACCESS_SP}" "{KEYWORDS}" "{DATATYPE}" "{IDENTIFIER}("({DATATYPE}" "{IDENTIFIER})*")"
+CLASS "System"|"Scanner"
+USER_DEFINED_STRING "\""({TEXT}|{DIGIT}|" ")+"\""
 %%
 [ \n\t]+ ;
-{FUNCTION} {printf("%s\t==>Function Declaration\n",yytext.at(0));}
+{USER_DEFINED_STRING} {printf("%s\t==>STRING\n",yytext);}
+{CLASS}   {printf("%s\t==>CLASS\n",yytext);}
+{FUNCTION} {printf("%s\t==>Function Declaration\n",yytext);}
 {PREPROCESSOR} {printf("%s\t==>Preprocessor\n",yytext);}
 {CONDITIONAL} { printf("%s\t==> CONDITIONAL\n",yytext);}
 {ITERATIVE} {printf("%s\t==> ITERATIVE CONSTRUCT\n",yytext);}
