@@ -1,1 +1,3 @@
-int x=5;
+public void fun (int x){
+  int w=1;
+ }

@@ -23,7 +23,7 @@ FUNCTION {ACCESS_SP}" "{DATATYPE}" "{IDENTIFIER}" ("({DATATYPE}" "{IDENTIFIER})"
 
 %%
 [ \n\t]+ ;
-{FUNCTION} {printf("%s\t==>Function Declaration\n",yytext));}
+{FUNCTION} {printf("%s\t==>Function Declaration\n",yytext.at(0));}
 {PREPROCESSOR} {printf("%s\t==>Preprocessor\n",yytext);}
 {CONDITIONAL} { printf("%s\t==> CONDITIONAL\n",yytext);}
 {ITERATIVE} {printf("%s\t==> ITERATIVE CONSTRUCT\n",yytext);}
